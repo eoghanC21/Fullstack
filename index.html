@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam_20365423</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- IMPORTING jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <div id = page>
+        <div id = "selectionMenu">
+            <button class = "mainBTN" id = mainTutorBTN   onclick="mainTutorBTNhandler()">Manage Tutors</button>
+            <button class = "mainBTN" id = mainStudentBTN  onclick="mainStudentBTNhandler()">Manage Students</button>
+            <button class = "mainBTN" id = mainTutorialBTN onclick="mainTutorialBTNhandler()">Manage Tutorials</button>
+        </div>
+        <div class = container id = tutorContainer>
+            <h3>Tutor Managment</h3>
+            <div class = createDiv id = createTutorDiv>
+                <select id="cTutorTitleInput" name="cTutorTitleInput" required>
+                    <option value="" selected disabled>Title</option>
+                    <option value="Dr">Dr</option>
+                    <option value="Mx">Mx</option>
+                    <option value="Ms">Ms</option>
+                    <option value="Mr">Mr</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Miss">Miss</option>
+                  </select>
+                  <input type="text" id="cTutorFNameInput" name="cTutorFNameInput" placeholder="First Name(s)*">
+                  <input type="text" id="cTutorSNameInput" name="cTutorSNameInput" placeholder="Surname*">
+                  <input type="text" id="cTutorPhoneInput" name="cTutorPhoneInput" placeholder="Phone#*">
+                  <input type="text" id="cTutorEmailInput" name="cTutorEmailInput" placeholder="Email*">
+                  <input type="text" id="cTutorAddressLine1Input" name="cTutorAddressLine1Input" placeholder="Address Line 1*" required>
+                  <input type="text" id="cTutorAddressLine2Input" name="cTutorAddressLine2Input" placeholder="Address Line 2">
+                  <input type="text" id="cTutorTownInput" name="cTutorTownInput" placeholder="Town*" required>
+                  <input type="text" id="cTutorCountyCityInput" name="cTutorCountyCityInput" placeholder="County/City*" required>
+                  <input type="text" id="cTutorEircodeInput" name="cTutorEircodeInput" placeholder="EIRCODE*" required>
+                  <input type="text" id="cTutorOtherInput" name="cTutorOtherInput" placeholder="Other">
+                  <button class="cBTN" id="createTutorButton" onclick="createTutorButtonEventHandler()">Create Tutor</button>
+                   </div>
+            <div class = retrieveDiv id = retrieveTutorDiv>
+                <input type="text" id="rTutorEmailInput" name ="rTutorEmailInput" placeholder="Email">
+                <button class = rBTN id = retrieveTutorButton onclick="retrieveTutorButtonEventHandler()">Retrive Tutor Info</button>                
+            </div>
+            <div class = updateDiv id = "updateTutorDiv">
+                <input type="text" id="uTutorEmailInput" name ="uTutorEmailInput" placeholder="Current Email">
+                <input type="text" id="uTutorPhoneInput" name ="uTutorPhoneInput" placeholder="Updated Phone Number">
+                <button class = uBTN id = updateTutorButton onclick="updateTutorButtonEventHandler()">Update Tutor Info</button>                
+            </div>
+            <div class = deleteDiv id = deleteTutorDiv>
+                <input type="text" id="dTutorEmailInput" name ="dTutorEmailInput" placeholder="Email to delete">
+                <button class = dBTN id = deleteTutorButton onclick="deleteTutorButtonEventHandler()">Delete Tutor</button>                
+            </div>
+        </div>
+        <div class="container" id="studentContainer">
+            <h3>Student Managment</h3>
+   
+            <div class="createDiv" id="createStudentDiv">
+                    <select id="cStudentTitleInput" name="cStudentTitleInput" required>
+                      <option value="" selected disabled>Title</option>
+                      <option value="Mx">Mx</option>
+                      <option value="Ms">Ms</option>
+                      <option value="Mr">Mr</option>
+                      <option value="Mrs">Mrs</option>
+                      <option value="Miss">Miss</option>
+                    </select>
+                    <input type="text" id="cStudentFNameInput" name="cStudentFNameInput" placeholder="First Name(s)*">
+                    <input type="text" id="cStudentSNameInput" name="cStudentSNameInput" placeholder="Surname*">
+                    <input type="text" id="cStudentPhoneInput" name="cStudentPhoneInput" placeholder="Phone#*">
+                    <input type="text" id="cStudentEmailInput" name="cStudentEmailInput" placeholder="Email*">
+                    <input type="text" id="cStudentAddressLine1Input" name="cStudentAddressLine1Input" placeholder="Address Line 1*" required>
+                    <input type="text" id="cStudentAddressLine2Input" name="cStudentAddressLine2Input" placeholder="Address Line 2">
+                    <input type="text" id="cStudentTownInput" name="cStudentTownInput" placeholder="Town*" required>
+                    <input type="text" id="cStudentCountyCityInput" name="cStudentCountyCityInput" placeholder="County/City*" required>
+                    <input type="text" id="cStudentEircodeInput" name="cStudentEircodeInput" placeholder="EIRCODE*" required>
+                    <label for="cStudentDateOfBirthInput">Date of Birth</label>
+                    <input type="date" id="cStudentDateOfBirthInput" name="cStudentDateOfBirthInput" required>
+                    <input type="text" id="cStudentParentGuardianNameInput" name="cStudentParentGuardianNameInput" placeholder="Parent/Guardain name">                    
+                    <select id="cStudentVirtualAttendencePermissionInput" name="cStudebtVirtualAttendencePermissionInput" required>
+                      <option value="" selected disabled>Virtual Attendance Permission</option>
+                      <option value="Yes">Yes</option>
+                      <option value="No">No</option>
+                    </select>
+                    <input type="text" id="cStudentSubjectInput" name="cStudentSubjectInput" placeholder="Subject">
+                    <select id="cStudentGenderInput" name="cStudentGenderInput">
+                      <option value="" selected disabled>Gender</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                    </select>
+                    <input type="text" id="cStudentOtherInput" name="cStudentOtherInput" placeholder="Other">
+                    <button class="cBTN" id="createStudentButton" onclick="createStudentButtonEventHandler()">Create Student</button>
+                  </div>
+                  
+              <div class="retrieveDiv" id="retrieveStudentDiv">
+                <input type="text" id="rStudentEmailInput" name="rStudentEmailInput" placeholder="Email">
+                <button class="rBTN" id="retrieveStudentButton" onclick="retrieveStudentButtonEventHandler()">Retrieve Student Info</button>
+              </div>
+              <div class="updateDiv" id="updateStudentDiv">
+                <input type="text" id="uStudentEmailInput" name="uStudentEmailInput" placeholder="Current Email*">
+                <input type="text" id="uStudentPhoneInput" name="uStudentPhoneInput" placeholder="Updated Phone Number">
+                <button class="uBTN" id="updateStudentButton" onclick="updateStudentButtonEventHandler()">Update Student Info</button>
+              </div>
+              <div class="deleteDiv" id="deleteStudentDiv">
+                <input type="text" id="dStudentEmailInput" name="dStudentEmailInput" placeholder="Email to delete">
+                <button class="dBTN" id="deleteStudentButton" onclick="deleteStudentButtonEventHandler()">Delete Student</button>
+              </div>
+          </div>
+          
+        <div class = container id = tutorialContainer>
+            <h3>Tutorial Managment</h3>
+
+            <div class = createDiv id = createTutorialDiv>
+                <label for="tutorialDateInput">Tutorial Date</label>
+                <input type="date" id="tutorialDateInput" name="tutorialDateInput" placeholder="Tutorial Date*" required>
+                <input type="text" id="tutorialTimeInput" name="tutorialTimeInput" placeholder="Tutorial Time*" required>
+                <select id="studentCount" name="studentCount">
+                    <option value="" disabled selected>Number of Students</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                <div id="studentInputsContainer"></div>
+                <input type="text" id="tutorInput" name="tutorInput" placeholder="Tutor*" required>
+                <input type="number" id="feeInput" name="feeInput" placeholder="Fee*" required>
+                <input type="number" id="tutorialNumberInput" name="tutorialNumberInput" placeholder="Tutorial Number*" required>
+                <select id="tutorialSubjectInput" name="tutorialSubjectInput" required>
+                  <option value="" disabled selected>Choose Tutorial Subject*</option>
+                  <option value="English">English</option>
+                  <option value="Irish">Irish</option>
+                  <option value="Maths">Maths</option>
+                  <option value="Biology">Biology</option>
+                  <option value="Chemistry">Chemistry</option>
+                  <option value="Physics">Physics</option>
+                  <option value="Computer Science">Computer Science</option>
+                </select>
+                <textarea id="tutorialNotesInput" name="tutorialNotesInput" placeholder="Tutorial Notes*" required></textarea>
+                <input type="text" id="otherDetailInput" name="otherDetailInput" placeholder="Other Detail">
+                <button class="cBTN" id="createTutorialButton" onclick="createTutorialButtonEventHandler()">Create Tutorial</button>
+            </div>
+
+            <div class = retrieveDiv id = retrieveTutorialDiv>
+                <input type="number" id="rtutorialNumberInput" name="rtutorialNumberInput" placeholder="Tutorial Number*" required>
+                <select id="rtutorialSubjectInput" name="rtutorialSubjectInput" required>
+                <option value="" disabled selected>Choose Tutorial Subject*</option>
+                <option value="English">English</option>
+                <option value="Irish">Irish</option>
+                <option value="Maths">Maths</option>
+                <option value="Biology">Biology</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Physics">Physics</option>
+                <option value="Computer Science">Computer Science</option>
+                </select>
+                <button class="rBTN" id="retrieveTutorialButton" onclick="retrieveTutorialButtonEventHandler()">Retrive Tutorial Info</button>
+            </div>
+            <!--<div class = updateDiv id = updateTutorialDiv></div>-->
+            <div class = deleteDiv id = deleteTutorialDiv>
+                <input type="number" id="dtutorialNumberInput" name="dtutorialNumberInput" placeholder="Tutorial Number*" required>
+                <input type="text" id="dtutorialTutor" name="dtutorialTutor" placeholder="Tutor Name*" required>
+                <select id="dtutorialSubjectInput" name="dtutorialSubjectInput" required>
+                <option value="" disabled selected>Choose Tutorial Subject*</option>
+                <option value="English">English</option>
+                <option value="Irish">Irish</option>
+                <option value="Maths">Maths</option>
+                <option value="Biology">Biology</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Physics">Physics</option>
+                <option value="Computer Science">Computer Science</option>
+                </select>
+                <button class="dBTN" id="deletetutorialButton" onclick="deleteTutorialButtonEventHandler()">Delete Tutorial</button>
+            </div>
+        </div>
+
+        <div id = "output"></div>
+    </div>
+</body>
+</html>
+
+<script>
+    
+    //handles dynamic studnet/attendance field generation for tutorial creation
+    const studentCountSelect = document.getElementById('studentCount');
+    const studentInputsContainer = document.getElementById('studentInputsContainer');
+
+    studentCountSelect.addEventListener('change', function() {
+    const selectedCount = parseInt(studentCountSelect.value);
+    studentInputsContainer.innerHTML = '';
+
+    for (let i = 1; i <= selectedCount; i++) {
+      const studentNameInput = document.createElement('input');
+      studentNameInput.type = 'text';
+      studentNameInput.id = `student${i}Name`;
+      studentNameInput.name = `student${i}Name`;
+      studentNameInput.placeholder = `Student ${i} Name`;
+
+      const studentAttendanceSelect = document.createElement('select');
+      studentAttendanceSelect.id = `student${i}Attendance`;
+      studentAttendanceSelect.name = `student${i}Attendance`;
+      const attendanceOptions = ['Attended', 'Cancelled', 'No Show'];
+
+      attendanceOptions.forEach(option => {
+        const attendanceOption = document.createElement('option');
+        attendanceOption.value = option;
+        attendanceOption.text = option;
+        studentAttendanceSelect.appendChild(attendanceOption);
+      });
+
+      studentInputsContainer.appendChild(studentNameInput);
+      studentInputsContainer.appendChild(studentAttendanceSelect);
+    }
+  });
+  
+    //CRUD funcs
+    
+    // Create Tutor
+    function createTutor() {
+    console.log("createTutor called");
+    // Get data from form
+    const tutorData = getTutorCreateData();
+    // Send POST request to server
+    fetch('http://localhost:3000/tutor', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(tutorData)
+    })
+        .then(response => response.json())
+        .then(data => {
+        // Handle server response
+        console.log('New tutor created and stored:', data);
+        // Update webpage with new stored tutor data
+        document.getElementById("output").innerHTML ="";
+        document.getElementById("output").innerHTML = "New Tutor created and stored <br><br>";
+        outputData(data);
+        })
+        .catch(error => {
+        console.error('Error creating new tutor:', error);
+        return;
+        });
+    }
+
+    //Retrieve Tutor (by email)
+    function retrieveTutor(email) {
+  console.log("retrieveTutor() called");
+  // Send GET request
+  fetch(`http://localhost:3000/tutors/${email}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+    })
+    .then(response => {
+      if (!response.ok) {
+        document.getElementById("output").innerHTML = "No tutor found with email: "+email;
+        throw new Error('Network response was not ok');
+      }
+      console.log('Tutor info retrieved successfully');
+      // Parse the response body as JSON
+      return response.json();
+    })
+    .then(data => {
+      document.getElementById("output").innerHTML = "Requested Tutor:<br>";
+      outputData(data);
+    })
+    .catch(error => {
+      console.error('Error retrieving tutor info:', error);
+    });
+    }
+
+    //Update Tutor phone# by email
+    function updateTutor(email, phoneNum){
+        console.log("updateTutor() called");
+        const data = {phoneNumber : phoneNum};
+        //send PUT request to server
+        fetch(`http://localhost:3000/tutors/${email}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+    .then(response => {
+        if (!response.ok) {
+            document.getElementById("output").innerHTML = "No tutor found with email: "+email;
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Tutor info updated:', data);
+        document.getElementById("output").innerHTML = "Updated tutor info <br><br>";
+        outputData(data);
+    })
+    .catch(error => {
+        console.error('Error updating tutor info:', error);
+    });
+    }
+
+    //delete tutor by email
+    function deleteTutor(email) {
+  console.log("deleteTutor() called");
+  // Send DELETE request
+  fetch(`http://localhost:3000/tutors/${email}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        document.getElementById("output").innerHTML = "No tutor found with email: "+email;
+        throw new Error('Network response was not ok');      }
+      console.log('Tutor deleted successfully');
+      // Output deletion to user
+      document.getElementById("output").innerHTML = "Tutor info with email: "+email+" deleted<br>";
+    })
+    .catch(error => {
+      console.error('Error deleting tutor:', error);
+    });
+}
+
+// Create Student
+function createStudent() {
+    console.log("createStudent called");
+    // Get data from form
+    const studentData = getStudentCreateData();
+    // Send POST request to server
+    fetch('http://localhost:3000/student', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(studentData)
+    })
+        .then(response => response.json())
+        .then(data => {
+        // Handle server response
+        console.log('New Student created and stored:', data);
+        // Update webpage with new stored Student data
+        document.getElementById("output").innerHTML = "New Student created and stored <br><br>";
+        outputData(data)
+        })
+        .catch(error => {
+        console.error('Error creating new Student:', error);
+        return;
+        });
+    }
+
+     // Retrieve student (by email)
+function retrieveStudent(email) {
+  console.log("retrieveStudent() called");
+  // Send GET request
+  fetch(`http://localhost:3000/students/${email}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        document.getElementById("output").innerHTML = "No student found with email: " + email;
+        throw new Error('Network response was not ok');
+      }
+      console.log('Student info retrieved successfully');
+      // Parse the response body as JSON
+      return response.json();
+    })
+    .then(data => {
+      document.getElementById("output").innerHTML = "Requested Student:<br>";
+      outputData(data);
+
+    })
+    .catch(error => {
+      console.error('Error retrieving student info:', error);
+    });
+}
+
+    //Update studnet phone# by email
+    function updateStudent(email, phoneNum) {
+  console.log("updateStudent() called");
+  const data = { phoneNumber: phoneNum };
+  // Send PUT request to server
+  fetch(`http://localhost:3000/students/${email}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+    .then(response => {
+      if (!response.ok) {
+        document.getElementById("output").innerHTML = "No student found with email: " + email;
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Student info updated:', data);
+      document.getElementById("output").innerHTML = "Updated student info <br><br>";
+      outputData(data);
+    })
+    .catch(error => {
+      console.error('Error updating student info:', error);
+    });
+}
+
+    //delete stduent by email
+    function deleteStudent(emailAddress) {
+  console.log("deleteStudent() called");
+  // Send DELETE request
+  fetch(`http://localhost:3000/student/${emailAddress}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        document.getElementById("output").innerHTML = "No Student found with email: "+emailAddress;
+        throw new Error('Network response was not ok');      }
+      console.log('Student deleted successfully');
+      // Output deletion to user
+      document.getElementById("output").innerHTML = "Info for "+emailAddress+" was deleted<br>";
+    })
+    .catch(error => {
+      console.error('Error deleting Student:', error);
+    });
+}
+    //create tutorial
+    function createTutorial(data){
+        console.log("createTutorial() called");
+        for (let field in data) {
+    if (field !== "otherDetail" && (data[field] === null || data[field] === "")) {
+      document.getElementById("output").textContent = "Required fields are missing for tutorial creation "
+        return; 
+    }
+  }
+        // Send POST request to server
+        fetch('http://localhost:3000/tutorial', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => response.json())
+            .then(data => {
+            // Handle server response
+            console.log('New tutorial created and stored:', data);
+            // Update webpage with new stored Student data
+            document.getElementById("output").innerHTML = "New tutorial created and stored <br><br>";
+            for (let prop in data) {
+        document.getElementById("output").innerHTML += prop + ": " + data[prop] + "<br>";
+      }            })
+            .catch(error => {
+            console.error('Error creating new tutorial:', error);
+            return;
+            });
+    }
+
+    //retrieve tutorial (by number and subject)
+    function retrieveTutorial(number, subject) {
+  console.log("retrieveTutorial() called");
+  // Send GET request
+  fetch(`http://localhost:3000/tutorials/${number}/${subject}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        document.getElementById("output").innerHTML = "No tutorial found with number: " + number + " and subject: " + subject;
+        throw new Error('Network response was not ok');
+      }
+      console.log('Tutorial info retrieved successfully');
+      // Parse the response body as JSON
+      return response.json();
+    })
+    .then(data => {
+      document.getElementById("output").innerHTML = "Requested Tutorial:<br>";
+      for (let prop in data) {
+        document.getElementById("output").innerHTML += prop + ": " + data[prop] + "<br>";
+      }
+    })
+    .catch(error => {
+      console.error('Error retrieving tutorial info:', error);
+    });
+}
+
+   // delete tutorial (by number, subject, and tutor)
+function deleteTutorial(number, subject, tutor) {
+  console.log("deleteTutorial() called");
+  // Send DELETE request
+  fetch(`http://localhost:3000/tutorials/${number}/${subject}/${tutor}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+    .then(response => {
+      if (!response.ok) {
+        document.getElementById("output").innerHTML = "No tutorial found with number: " + number + ", subject: " + subject + ", and tutor: " + tutor;
+        throw new Error('Network response was not ok');
+      }
+      console.log('Tutorial deleted successfully');
+      // Handle the success response as needed
+      // For example, display a success message
+      document.getElementById("output").innerHTML = "Tutorial deleted successfully";
+    })
+    .catch(error => {
+      console.error('Error deleting tutorial:', error);
+    });
+}
+
+    
+    //retrieve tutor data from form 
+    function getTutorCreateData() {
+  console.log("getTutorCreateData called");
+  const title = document.getElementById("cTutorTitleInput").value;
+  const firstName = document.getElementById("cTutorFNameInput").value;
+  const surName = document.getElementById("cTutorSNameInput").value;
+  const phoneNumber = document.getElementById("cTutorPhoneInput").value;
+  const email = document.getElementById("cTutorEmailInput").value;
+  const addressLine1 = document.getElementById("cTutorAddressLine1Input").value;
+  const addressLine2 = document.getElementById("cTutorAddressLine2Input").value;
+  const town = document.getElementById("cTutorTownInput").value;
+  const countyCity = document.getElementById("cTutorCountyCityInput").value;
+  const eircode = document.getElementById("cTutorEircodeInput").value;
+  const other = document.getElementById("cTutorOtherInput").value;
+
+  return {
+    title,
+    firstName,
+    surName,
+    phoneNumber,
+    email,
+    addressLine1,
+    addressLine2,
+    town,
+    countyCity,
+    eircode,
+    other,
+  };
+}
+
+
+    function getStudentCreateData() {
+  const title = document.getElementById("cStudentTitleInput").value;
+  const firstName = document.getElementById("cStudentFNameInput").value;
+  const surName = document.getElementById("cStudentSNameInput").value;
+  const phoneNumber = document.getElementById("cStudentPhoneInput").value;
+  const emailAddress = document.getElementById("cStudentEmailInput").value;
+  const addressLine1 = document.getElementById("cStudentAddressLine1Input").value;
+  const addressLine2 = document.getElementById("cStudentAddressLine2Input").value;
+  const town = document.getElementById("cStudentTownInput").value;
+  const countyCity = document.getElementById("cStudentCountyCityInput").value;
+  const eircode = document.getElementById("cStudentEircodeInput").value;
+  const dateOfBirth = document.getElementById("cStudentDateOfBirthInput").value; // Updated field name
+  const parentGuardianName = document.getElementById('cStudentParentGuardianNameInput').value;
+  const virtualAttendencePermission = document.getElementById("cStudentVirtualAttendencePermissionInput").value;
+  const subject = document.getElementById("cStudentSubjectInput").value;
+  const gender = document.getElementById("cStudentGenderInput").value; // Updated field name
+  const other = document.getElementById("cStudentOtherInput").value;
+
+  return {
+    title,
+    firstName,
+    surName,
+    phoneNumber,
+    emailAddress,
+    addressLine1,
+    addressLine2,
+    town,
+    countyCity,
+    eircode,
+    dateOfBirth,
+    parentGuardianName,
+    virtualAttendencePermission,
+    subject,
+    gender,
+    other
+  };
+}
+
+function getTutorialCreateData() {
+  const tutorialDate = document.getElementById('tutorialDateInput').value;
+  const tutorialTime = document.getElementById('tutorialTimeInput').value;
+  const tutor = document.getElementById('tutorInput').value;
+  const fee = document.getElementById('feeInput').value;
+  const tutorialNumber = document.getElementById('tutorialNumberInput').value;
+  const tutorialSubject = document.getElementById('tutorialSubjectInput').value;
+  const tutorialNotes = document.getElementById('tutorialNotesInput').value;
+  const otherDetail = document.getElementById('otherDetailInput').value;
+
+  var studentCount = parseInt(document.getElementById('studentCount').value);
+  var students = [];
+
+  for (var i = 1; i <= studentCount; i++) {
+    var studentName = document.getElementById('student'+i+'Name').value;
+    var studentAttendance = document.getElementById('student'+i+'Attendance').value;
+    
+    var student = {
+      name: studentName,
+      attendance: studentAttendance
+    };
+
+    students.push(student);
+  }
+
+  var tutorialData = {
+    tutorialDate: tutorialDate,
+    tutorialTime: tutorialTime,
+    students: students,
+    tutor: tutor,
+    fee: fee,
+    tutorialNumber: tutorialNumber,
+    tutorialSubject: tutorialSubject,
+    tutorialNotes: tutorialNotes,
+    otherDetail: otherDetail
+  };
+
+  return tutorialData;
+}
+
+
+
+
+
+    function createTutorButtonEventHandler(){
+        console.log("createTutorButton clicked");
+        const title = document.getElementById('cTutorTitleInput').value;
+        const firstName = document.getElementById('cTutorFNameInput').value;
+        const surName = document.getElementById('cTutorSNameInput').value;
+        const phoneNumber = document.getElementById('cTutorPhoneInput').value;
+        const emailAddress = document.getElementById('cTutorEmailInput').value;
+        const addressLine1 = document.getElementById('cTutorAddressLine1Input').value;
+        const town = document.getElementById('cTutorTownInput').value;
+        const countyCity = document.getElementById('cTutorCountyCityInput').value;
+        const eircode = document.getElementById('cTutorEircodeInput').value;
+
+        // Check if any of the required input fields are empty
+        if (
+            title === '' ||
+            firstName === '' ||
+            surName === '' ||
+            phoneNumber === '' ||
+            emailAddress === '' ||
+            addressLine1 === '' ||
+            town === '' ||
+            countyCity === '' ||
+            eircode === ''
+        ){
+            document.getElementById('output').textContent = "Required fields for creation are missing input";
+            return;
+        }
+        createTutor();
+    }
+
+    function retrieveTutorButtonEventHandler(){
+        console.log("retrieveTutorButtonEventHandler() called");
+        const email = document.getElementById("rTutorEmailInput").value;
+        if(email == ""){
+            document.getElementById("output").textContent = "Fill required fields";
+            return;
+        };
+        retrieveTutor(email);
+    }
+
+    function updateTutorButtonEventHandler(){
+        console.log("updateTutorButtonEventHandler() called");
+        const email = document.getElementById("uTutorEmailInput").value;
+        const uPhone = document.getElementById("uTutorPhoneInput").value;
+        if(email == "" || uPhone == ""){
+            document.getElementById("output").textContent = "Fill required fields";
+            return;
+        };
+        updateTutor(email,uPhone);
+    }
+
+    function deleteTutorButtonEventHandler(){
+        console.log("deleteTutorButtonEventHandler() called");
+        const email = document.getElementById("dTutorEmailInput").value;
+        if(email == ""){
+            document.getElementById("output").textContent = "Fill required fields";
+            return;
+        };
+        deleteTutor(email);
+    }
+
+    function createStudentButtonEventHandler(){
+        const firstName = document.getElementById('cStudentFNameInput').value;
+  const surName = document.getElementById('cStudentSNameInput').value;
+  const phoneNumber = document.getElementById('cStudentPhoneInput').value;
+  const emailAddress = document.getElementById('cStudentEmailInput').value;
+  const addressLine1 = document.getElementById('cStudentAddressLine1Input').value;
+  const town = document.getElementById('cStudentTownInput').value;
+  const countyCity = document.getElementById('cStudentCountyCityInput').value;
+  const eircode = document.getElementById('cStudentEircodeInput').value;
+  const dateOfBirth = document.getElementById('cStudentDateOfBirthInput').value;
+  const virtualAttendencePermission = document.getElementById('cStudentVirtualAttendencePermissionInput').value;
+
+  // Check if any of the required input fields are empty
+    if(
+        firstName === '' ||
+        surName === '' ||
+        phoneNumber === '' ||
+        emailAddress === '' ||
+        addressLine1 === '' ||
+        town === '' ||
+        countyCity === '' ||
+        eircode === '' ||
+        dateOfBirth === '' ||
+        virtualAttendencePermission === ''
+    ){
+        document.getElementById('output').textContent = "Required fields for creation are missing input";
+        return
+    }
+        createStudent();
+    }
+
+    function retrieveStudentButtonEventHandler(){
+        console.log("retrievStudentButtonEventHandler() called");
+        const email = document.getElementById("rStudentEmailInput").value;
+        if(email == ""){
+            document.getElementById("output").textContent = "Fill required fields";
+            return;
+        };
+        retrieveStudent(email);
+    }
+
+    function updateStudentButtonEventHandler(){
+        console.log("updateStudentButtonEventHandler() called");
+        const emailAddress = document.getElementById("uStudentEmailInput").value;
+        const uPhone = document.getElementById("uStudentPhoneInput").value;
+        if(emailAddress == "" || uPhone == ""){
+            document.getElementById("output").textContent = "Fill required fields";
+            return;
+        };
+        updateStudent(emailAddress,uPhone);
+    }
+
+    function deleteStudentButtonEventHandler(){
+        const email = document.getElementById("dStudentEmailInput").value;
+        if(email == ""){
+            document.getElementById("output").textContent = "Fill required fields";
+            return;
+        };
+        deleteStudent(email);
+    }
+
+    function createTutorialButtonEventHandler(){
+        // console.log(document.getElementById("student1Name").value);
+        // console.log(document.getElementById("student1Attendance").value);
+//         console.log("Tutorial Date:", document.getElementById('tutorialDateInput').value);
+// console.log("Tutorial Time:", document.getElementById('tutorialTimeInput').value);
+// console.log("Tutor:", document.getElementById('tutorInput').value);
+// console.log("Fee:", document.getElementById('feeInput').value);
+// console.log("Tutorial Number:", document.getElementById('tutorialNumberInput').value);
+// console.log("Tutorial Subject:", document.getElementById('tutorialSubjectInput').value);
+// console.log("Tutorial Notes:", document.getElementById('tutorialNotesInput').value);
+// console.log("Other Detail:", document.getElementById('otherDetailInput').value);
+
+// var studentCount = parseInt(document.getElementById('studentCount').value);
+
+//   for (var i = 1; i <= studentCount; i++) {
+//     console.log(document.getElementById('student'+i+'Name').value);
+//     console.log(document.getElementById('student'+i+'Attendance').value);
+//   }
+        //     const tutorialData = getTutorialCreateData();
+    //     createTutorial(tutorialData);
+    // 
+        data = getTutorialCreateData();
+        createTutorial(data);
+    }
+    
+    function retrieveTutorialButtonEventHandler(){
+        console.log(document.getElementById("rtutorialNumberInput").value + " " +document.getElementById("rtutorialSubjectInput").value)
+        const number = document.getElementById("rtutorialNumberInput").value;
+        const subject = document.getElementById("rtutorialSubjectInput").value;
+        if(subject == "" || number ==""){
+            document.getElementById('output').textContent = "Fill necessary fields";
+            return;
+        }
+        retrieveTutorial(number,subject);
+    }
+
+    function deleteTutorialButtonEventHandler(){
+        console.log(document.getElementById("dtutorialNumberInput").value + " " +document.getElementById("dtutorialSubjectInput").value)
+        const number = document.getElementById("dtutorialNumberInput").value;
+        const subject = document.getElementById("dtutorialSubjectInput").value;
+        const tutor = document.getElementById("dtutorialTutor").value;
+        if(subject == "" || number =="" || tutor == ""){
+            document.getElementById('output').textContent = "Fill necessary fields";
+            return;
+        }
+        deleteTutorial(number,subject,tutor);
+    }
+
+    function mainTutorBTNhandler(){
+        document.getElementById("output").innerHTML ="";
+        document.getElementById("tutorContainer").style.display = "block";
+        document.getElementById("studentContainer").style.display = "none";
+        document.getElementById("tutorialContainer").style.display = "none";
+    }
+
+    function mainStudentBTNhandler(){
+        document.getElementById("output").innerHTML ="";
+        document.getElementById("tutorContainer").style.display = "none";
+        document.getElementById("studentContainer").style.display = "block";
+        document.getElementById("tutorialContainer").style.display = "none";
+    }
+
+    function mainTutorialBTNhandler(){
+        document.getElementById("output").innerHTML ="";
+        document.getElementById("tutorContainer").style.display = "none";
+        document.getElementById("studentContainer").style.display = "none";
+        document.getElementById("tutorialContainer").style.display = "block";
+
+    }
+
+    function outputData(data) {
+  // Create a table element
+  var table = document.createElement('table');
+
+  // Iterate over the properties of the data object
+  for (var key in data) {
+    if (data.hasOwnProperty(key)) {
+      var value = data[key];
+
+      // Create a table row for each property
+      var row = document.createElement('tr');
+
+      // Create table cells for the property name and value
+      var keyCell = document.createElement('td');
+      keyCell.textContent = key;
+      var valueCell = document.createElement('td');
+
+      // If the value is an object, recursively call displayData to create a nested table
+      if (typeof value === 'object' && value !== null) {
+        valueCell.appendChild(outputData(value));
+      } else {
+        valueCell.textContent = value;
+      }
+
+      // Append the cells to the row
+      row.appendChild(keyCell);
+      row.appendChild(valueCell);
+
+      // Append the row to the table
+      table.appendChild(row);
+    }
+  }
+
+  // Clear the existing content of the "output" div
+  var outputDiv = document.getElementById('output');
+
+  // Append the table to the "output" div
+  outputDiv.appendChild(table);
+}
+
+
+
+
+</script>

@@ -1,0 +1,159 @@
+*{
+  padding: 10;
+  margin: 10;
+  box-sizing: border-box;
+  font-size: large;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+  background-color: #222;
+  color: #fff;
+}
+
+.page{
+  display: flex;
+}
+
+.selectionMenu{
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.mainBTN{
+  background-color: olivedrab;
+  color: black;
+  font-weight: bold;
+}
+
+.container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.createDiv,.updateDiv,.retrieveDiv, .deleteDiv {
+  margin-bottom: 3rem;
+}
+
+
+.container.dark-theme {
+  background-color: #333;
+  color: #fff;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+textarea,
+select {
+  margin: 5px 0;
+  padding: 10px;
+  width: 250px;
+  background-color: #444;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+}
+
+textarea{
+  margin-bottom:-1rem;
+}
+
+select {
+  width: 270px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #f95959;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ff7373;
+}
+
+button.cBTN {
+  background-color: #55aaff;
+}
+
+button.cBTN:hover {
+  background-color: #80c1ff;
+}
+
+button.rBTN {
+  background-color: #ffaa55;
+}
+
+button.rBTN:hover {
+  background-color: #ffbf80;
+}
+
+button.uBTN {
+  background-color: green;
+}
+
+button.uBTN:hover {
+  background-color: #80ffbf;
+}
+
+button.dBTN {
+  background-color: #ff5555;
+}
+
+button.dBTN:hover {
+  background-color: #ff8080;
+}
+
+table {
+  border-collapse: collapse;
+  background-color: #333;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  width: 100%;
+}
+
+th {
+  background-color: #555;
+  color: #fff;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #fff;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #555;
+}
+
+tr:first-child th {
+  border-top: 1px solid #fff;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Hover effect */
+tr:hover {
+  background-color: green;
+}
+
+th:hover {
+  background-color: #666;
+}
+
+td:hover {
+  background-color: #555;
+}
