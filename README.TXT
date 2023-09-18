@@ -1,5 +1,4 @@
 Made in VSCode on 24/05/23 on Windows 10 - Eoghan Clancy - 20365423
-This was a 24hr coding exam
 Full CRUD functionality
 
 To Operate:
